@@ -2,6 +2,15 @@
 # Blog settings
 ###
 
+# Directory Conventions
+
+set :css_dir, 'stylesheets'
+set :js_dir, 'js'
+set :images_dir, 'img'
+
+# Use Haml
+set :haml, { ugly: true, format: :html5 }
+
 # Time.zone = "UTC"
 
 activate :blog do |blog|
@@ -20,8 +29,8 @@ activate :blog do |blog|
   # blog.day_link = "{year}/{month}/{day}.html"
   # blog.default_extension = ".markdown"
 
-  blog.tag_template = "tag.html"
-  blog.calendar_template = "calendar.html"
+  # blog.tag_template = "tag.html"
+  # blog.calendar_template = "calendar.html"
 
   # Enable pagination
   # blog.paginate = true
@@ -78,11 +87,6 @@ page "/feed.xml", layout: false
 #   end
 # end
 
-set :css_dir, 'stylesheets'
-
-set :js_dir, 'javascripts'
-
-set :images_dir, 'images'
 
 # Build-specific configuration
 configure :build do
@@ -100,4 +104,7 @@ configure :build do
 
   # Or use a different image path
   # set :http_prefix, "/Content/images/"
+
+  # Pretty Urls
+  activate :directory_indexes
 end
