@@ -7,6 +7,7 @@
 set :css_dir, 'stylesheets'
 set :js_dir, 'js'
 set :images_dir, 'img'
+set :partials_dir, 'partials'
 
 # Use Haml
 set :haml, { ugly: true, format: :html5 }
@@ -15,19 +16,22 @@ set :haml, { ugly: true, format: :html5 }
 
 activate :blog do |blog|
   # This will add a prefix to all links, template references and source paths
-  # blog.prefix = "blog"
+  # blog.prefix = "articles"
+  # Template
+  blog.new_article_template = "new_article_template.html.erb"
 
   # blog.permalink = "{year}/{month}/{day}/{title}.html"
   # Matcher for blog source files
-  # blog.sources = "{year}-{month}-{day}-{title}.html"
+  blog.sources = "articles/{title}.html"
+  blog.permalink = "{title}.html"
   # blog.taglink = "tags/{tag}.html"
-  # blog.layout = "layout"
+  blog.layout = "test"
   # blog.summary_separator = /(READMORE)/
   # blog.summary_length = 250
   # blog.year_link = "{year}.html"
   # blog.month_link = "{year}/{month}.html"
   # blog.day_link = "{year}/{month}/{day}.html"
-  # blog.default_extension = ".markdown"
+  blog.default_extension = ".haml"
 
   # blog.tag_template = "tag.html"
   # blog.calendar_template = "calendar.html"
