@@ -12,13 +12,13 @@ set :partials_dir, 'partials'
 # Use Haml
 set :haml, { ugly: true, format: :html5 }
 
-# Time.zone = "UTC"
+Time.zone = "US/Eastern"
 
 activate :blog do |blog|
   # This will add a prefix to all links, template references and source paths
   # blog.prefix = "articles"
   # Template
-  blog.new_article_template = "new_article_template.html.erb"
+  blog.new_article_template = "source/new_article_template.html.erb"
 
   # blog.permalink = "{year}/{month}/{day}/{title}.html"
   # Matcher for blog source files
