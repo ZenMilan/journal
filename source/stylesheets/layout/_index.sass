@@ -1,0 +1,18 @@
+html
+  font-size: 100%
+
+=full-flex-container
+  width: 100%
+  max-width: 62.5rem
+  padding: 0 5%
+  margin: 0 auto
+  box-sizing: border-box
+  border: 1px solid #ccc
+
+  &:before
+    content: 'full flex layout'
+    font-family: "Lucida Console", Monaco, monospace
+    display: block
+
+.full-flex
+  +full-flex-container
