@@ -1,0 +1,22 @@
+-# %script(src="//ajax.googleapis.com/ajax/libs/webfont/1.5.3/webfont.js")
+:javascript
+  WebFontConfig = {
+    google: {
+      families: ['Open Sans:700,300', 'Gentium Basic:400,700,400italic', 'Inconsolata']
+    },
+    loading: function() {console.log('loading...');},
+    active: function() {console.log(this);},
+    inactive: function() {},
+    timeout: 2000
+
+  };
+
+  (function() {
+    var wf = document.createElement('script');
+    wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
+              '://ajax.googleapis.com/ajax/libs/webfont/1.4.7/webfont.js';
+    wf.type = 'text/javascript';
+    wf.async = 'true';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(wf, s);
+  })();

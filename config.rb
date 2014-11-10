@@ -9,6 +9,9 @@ set :js_dir, 'js'
 set :images_dir, 'img'
 set :partials_dir, 'partials'
 
+# Autoprefixer
+activate :autoprefixer
+
 # Use Haml
 set :haml, { ugly: true, format: :html5 }
 
@@ -24,7 +27,7 @@ activate :blog do |blog|
   # Matcher for blog source files
   blog.sources = "articles/{title}.html"
   blog.permalink = "{title}.html"
-  # blog.taglink = "tags/{tag}.html"
+  blog.taglink = "on/{tag}.html"
   blog.layout = "articles"
   # blog.summary_separator = /(READMORE)/
   # blog.summary_length = 250
