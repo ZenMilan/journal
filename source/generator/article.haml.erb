@@ -5,8 +5,11 @@ date: <%= @date %>
 
 .heading
   %h1= @title
+  %time{ datetime: "#{@date}" } @date
 
-.full-flex
+.flex
+  %p This is an optional lead-in. Copy that is supplemental in nature should go here.
+
   %p
     Donec ullamcorper nulla non metus auctor fringilla. Nulla vitae elit libero, a pharetra augue. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Aenean lacinia bibendum nulla sed consectetur. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.
   %p
