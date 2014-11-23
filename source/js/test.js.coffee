@@ -1,11 +1,19 @@
 document.addEventListener 'DOMContentLoaded', (evt) ->
 
-  daylight = document.querySelector('.daylight')
-  skylight = document.querySelector('.skylight')
+  daylight      = document.querySelector('.daylight')
+  skylight      = document.querySelector('.skylight')
   mtn           = document.querySelector('.mtn')
   sky           = document.querySelector('.sky')
+  stars         = document.querySelectorAll('.star')
   bgImgs        = document.querySelectorAll('.bg-img')
   contactButton = document.querySelector('button')
+  screenWidth   = window.screen.availWidth
+  screenHeight  = window.screen.availHeight / 50
+  translateZMin = -900
+  translateZMax = 100
+
+  r = (min, max) ->
+    Math.floor(Math.random() * (max - min + 1)) + min
 
   launchEmail = (e) ->
     e.preventDefault()
@@ -27,30 +35,56 @@ document.addEventListener 'DOMContentLoaded', (evt) ->
 
     Velocity
       elements: sky
-      properties: { opacity: [1, 'easeIn', 0], translateZ: [0, 'easeInSine', 300] }
-      options: { duration: 3000 }
+      properties: { opacity: [1, 0], translateZ: [0, 300] }
+      options: { duration: 3000, easing: 'easeInOutSine' }
 
     Velocity
       elements: mtn
-      properties: { opacity: [1, 'easeIn', 0], translateZ: [0, 'easeInSine', 55] }
-      options: { duration: 800, delay: 1000 }
+      properties: { opacity: [1, 0], translateZ: [0, 55] }
+      options: { duration: 800, delay: 1000, easing: 'easeInQuad' }
 
-  Velocity
-    elements: document.querySelectorAll('span.extra')
-    properties: { opacity: 0.35 }
-    options: { duration: 1000, delay: 4000 }
+    Velocity
+      elements: document.querySelectorAll('span.extra')
+      properties: { opacity: 0.35 }
+      options: { duration: 1000, delay: 4000 }
 
-  Velocity
-    elements: contactButton
-    properties: { translateX: [0, [500, 30], -500] }
-    options: { duration: 1400, delay: 5000 }
+    Velocity
+      elements: contactButton
+      properties: { translateX: [0, [500, 30], -500] }
+      options: { duration: 1400, delay: 5000 }
 
-  Velocity
-    elements: daylight
-    properties: { backgroundColor: ['#000', '#000'], backgroundColorAlpha: [0.5, 0.001] }
-    options: { duration: 3000, delay: 4000 }
+    Velocity
+      elements: daylight
+      properties: { backgroundColor: ['#000', '#000'], backgroundColorAlpha: [0.5, 0.001] }
+      options: { duration: 3000, delay: 4000 }
 
-  Velocity
-    elements: skylight
-    properties: { backgroundColor: ['#000', '#000'], backgroundColorAlpha: [0.75, 0.001] }
-    options: { duration: 7000, delay: 4000 }
+    Velocity
+      elements: skylight
+      properties: { backgroundColor: ['#000', '#000'], backgroundColorAlpha: [0.75, 0.001] }
+      options: { duration: 7000, delay: 4000 }
+
+    Velocity
+      elements: stars
+      properties:
+        opacity: [
+          -> Math.random(),
+          -> Math.random() + 0.1
+        ]
+        translateX: [
+          -> "+= #{r(-screenWidth, screenWidth)}",
+          -> r(0, screenWidth)
+        ]
+        translateY: [
+          -> "+= #{r(-screenHeight, screenHeight)}",
+          -> r(0, screenHeight)
+        ]
+        translateZ: [
+          -> "+= #{r(translateZMin, translateZMax)}",
+          -> r(translateZMin, translateZMax)
+        ]
+      options: { duration: 30000, loop: true }
+
+    Velocity
+      elements: nightTime
+      properties: { opacity: [1, 0] }
+      options: { duration: 2000, delay: 7000 }
