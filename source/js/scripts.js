@@ -1,1 +1,2 @@
-//= require_tree .
+//= require_tree ./vendor
+//= require test
