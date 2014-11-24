@@ -35,3 +35,8 @@ configure :build do
   activate :minify_javascript
   activate :directory_indexes
 end
+
+# Deployer
+activate :deploy do |deploy|
+  deploy.method = :git
+end
