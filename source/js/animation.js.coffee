@@ -88,13 +88,3 @@ document.addEventListener 'DOMContentLoaded', (evt) ->
   imagesLoaded document.querySelector('.scene'), (instance) ->
 
     Velocity.RunSequence(sceneAnimation.full.call(sceneAnimation))
-
-    # Velocity(sceneAnimation.sky)
-    # Velocity(sceneAnimation.mtn)
-
-    # Velocity(sceneAnimation.extraTxt)
-    # Velocity(sceneAnimation.contactBtn)
-
-    # Velocity(sceneAnimation.daylight)
-    # Velocity(sceneAnimation.skylight)
-    # Velocity(sceneAnimation.stars)

@@ -1,2 +1,2 @@
 //= require_tree ./vendor
-//= require test
+//= require animation
