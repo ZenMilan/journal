@@ -100,4 +100,13 @@ article
     +sans-serif
     font-weight: 700
     padding-left: 1rem
-    border-left: 0.4rem solid lighten($black, 50%)
+
+    &::before
+      content: '\0201C'
+      font-family: 'Arial'
+      color: lighten($black, 65%)
+      font-size: 7rem
+      z-index: 1
+      line-height: 0.5
+      position: relative
+      top: 1rem

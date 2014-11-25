@@ -3,6 +3,7 @@ document.addEventListener 'DOMContentLoaded', (evt) ->
   daylight      = document.querySelector('.daylight')
   skylight      = document.querySelector('.skylight')
   mtn           = document.querySelector('.mtn')
+  aboutTxt      = document.querySelector('h2.about')
   sky           = document.querySelector('.sky')
   stars         = document.querySelectorAll('.star')
   bgImgs        = document.querySelectorAll('.bg-img')
@@ -38,10 +39,15 @@ document.addEventListener 'DOMContentLoaded', (evt) ->
       properties: { opacity: [1, 0], translateZ: [0, 55] }
       options: { duration: 800, delay: 1000, easing: 'easeInQuad' }
 
+    showAboutTxt:
+      elements: aboutTxt
+      properties: { translateX: [0, [500, 30], -600] }
+      options: { duration: 1400 }
+
     extraTxt:
-      elements: document.querySelectorAll('span.extra')
+      elements: aboutTxt.querySelectorAll('span.extra')
       properties: { opacity: 0.35 }
-      options: { duration: 1000, delay: 4000 }
+      options: { duration: 1000 }
 
     contactBtn:
       elements: contactBtn
@@ -79,7 +85,7 @@ document.addEventListener 'DOMContentLoaded', (evt) ->
         ]
       options: { duration: 30000, loop: true, sequenceQueue: false }
 
-    full: -> [@sky, @mtn, @extraTxt, @contactBtn, @daylight, @skylight, @stars]
+    full: -> [@sky, @mtn, @showAboutTxt, @extraTxt, @contactBtn, @daylight, @skylight, @stars]
 
   createImageFrom bgImg for bgImg in bgImgs
 
