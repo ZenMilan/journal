@@ -1,17 +1,19 @@
 document.addEventListener 'DOMContentLoaded', (evt) ->
 
-  daylight      = document.querySelector('.daylight')
-  skylight      = document.querySelector('.skylight')
-  mtn           = document.querySelector('.mtn')
-  aboutTxt      = document.querySelector('h2.about')
-  sky           = document.querySelector('.sky')
-  stars         = document.querySelectorAll('.star')
-  bgImgs        = document.querySelectorAll('.bg-img')
-  contactBtn    = document.querySelector('button')
-  screenWidth   = window.screen.availWidth
-  screenHeight  = window.screen.availHeight / 30
-  translateZMin = -900
-  translateZMax = 100
+  daylight        = document.querySelector('.daylight')
+  skylight        = document.querySelector('.skylight')
+  mtn             = document.querySelector('.mtn')
+  aboutTxt        = document.querySelector('h2.about')
+  sky             = document.querySelector('.sky')
+  stars           = document.querySelectorAll('.star')
+  bgImgs          = document.querySelectorAll('.bg-img')
+  contactBtn      = document.querySelector('button')
+  socialContainer = document.querySelector('ul.social')
+  socialIcons     = socialContainer.querySelectorAll('li')
+  screenWidth     = window.screen.availWidth
+  screenHeight    = window.screen.availHeight / 30
+  translateZMin   = -900
+  translateZMax   = 100
 
   r = (min, max) ->
     Math.floor(Math.random() * (max - min + 1)) + min
@@ -29,25 +31,20 @@ document.addEventListener 'DOMContentLoaded', (evt) ->
     image.src = bgImgUrl
 
   sceneAnimation =
+    mtn:
+      elements: mtn
+      properties: { opacity: [1, 0], translateZ: [0, 355] }
+      options: { duration: 2800, delay: 1000, easing: 'easeInQuad' }
+
     sky:
       elements: sky
       properties: { opacity: [1, 0], translateZ: [0, 300] }
-      options: { duration: 3000, easing: 'easeInOutSine' }
-
-    mtn:
-      elements: mtn
-      properties: { opacity: [1, 0], translateZ: [0, 55] }
-      options: { duration: 800, delay: 1000, easing: 'easeInQuad' }
+      options: { duration: 3000, easing: 'easeInOutSine', sequenceQueue: false }
 
     showAboutTxt:
       elements: aboutTxt
       properties: { translateX: [0, [500, 30], -600] }
       options: { duration: 1400 }
-
-    extraTxt:
-      elements: aboutTxt.querySelectorAll('span.extra')
-      properties: { opacity: 0.35 }
-      options: { duration: 1000 }
 
     contactBtn:
       elements: contactBtn
@@ -63,6 +60,16 @@ document.addEventListener 'DOMContentLoaded', (evt) ->
       elements: skylight
       properties: { backgroundColor: ['#000', '#000'], backgroundColorAlpha: [0.70, 0.001] }
       options: { duration: 7000 }
+
+    fadeOutExtraTxt:
+      elements: aboutTxt.querySelectorAll('span.extra')
+      properties: { opacity: 0.35 }
+      options: { duration: 1000, sequenceQueue: false }
+
+    zoomInMtn:
+      elements: mtn
+      properties: { translateZ: [125, 0] }
+      options: { duration: 15000, easing: 'easeInQuad', sequenceQueue: false }
 
     stars:
       elements: stars
@@ -85,7 +92,21 @@ document.addEventListener 'DOMContentLoaded', (evt) ->
         ]
       options: { duration: 30000, loop: true, sequenceQueue: false }
 
-    full: -> [@sky, @mtn, @showAboutTxt, @extraTxt, @contactBtn, @daylight, @skylight, @stars]
+    socialFadeIn:
+      elements: socialContainer
+      properties: { opacity: [1, 0] }
+      options: { duration: 800, sequenceQueue: false }
+
+    social:
+      elements: socialIcons
+      properties:
+        translateX: [0, -> r(0, screenWidth * 7.5)]
+        translateY: [0, -> r(0, screenHeight * 7.5)]
+        translateZ: [0, translateZMin * 7.5]
+        rotateZ: ["1080deg", 0]
+      options: { duration: 13500, sequenceQueue: false }
+
+    full: -> [@mtn, @sky, @showAboutTxt, @daylight, @skylight, @fadeOutExtraTxt, @zoomInMtn, @stars, @socialFadeIn, @social, @contactBtn]
 
   createImageFrom bgImg for bgImg in bgImgs
 

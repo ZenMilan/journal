@@ -60,6 +60,35 @@
     text-transform: capitalize
     font-size: 1.55rem
     +font-smoothing
+    display: inline
+
+  ul.social
+    margin: 0
+    padding: 0
+    display: inline-block
+    opacity: 0
+    perspective: 500px
+    transform: translateY(4px)
+
+    li
+      list-style: none
+      float: left
+
+      a
+        width: 22px
+        height: 22px
+        border-radius: 50%
+        background: none
+        margin-left: 1rem
+        display: block
+
+        &.twitter
+          background-image: image-url('img/twitter.svg')
+          background-size: contain
+
+        &.github
+          background-image: image-url('img/octocat.svg')
+          background-size: contain
 
   h2
     +serif
