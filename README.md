@@ -1,7 +1,12 @@
+kevinpruett.com
+===============
+
+Built using [Middleman](middlemanapp.com)
+
 ## Run locally
 `middleman`
 
-## Create article
+## Create article template
 `middleman article <title>`
 
 ## Deploy
