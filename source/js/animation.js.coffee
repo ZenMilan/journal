@@ -54,7 +54,7 @@ document.addEventListener 'DOMContentLoaded', (evt) ->
     daylight:
       elements: daylight
       properties: { backgroundColor: ['#000', '#000'], backgroundColorAlpha: [0.66, 0.001] }
-      options: { duration: 4000, delay: 4000 }
+      options: { duration: 4000, delay: 1000 }
 
     skylight:
       elements: skylight
