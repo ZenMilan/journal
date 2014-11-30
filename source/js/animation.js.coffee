@@ -11,7 +11,7 @@ document.addEventListener 'DOMContentLoaded', (evt) ->
   socialContainer = document.querySelector('ul.social')
   socialIcons     = socialContainer.querySelectorAll('li')
   screenWidth     = window.screen.availWidth
-  screenHeight    = window.screen.availHeight / 30
+  screenHeight    = window.screen.availHeight
   translateZMin   = -900
   translateZMax   = 100
 
@@ -68,7 +68,7 @@ document.addEventListener 'DOMContentLoaded', (evt) ->
 
     zoomInMtn:
       elements: mtn
-      properties: { translateZ: [125, 0] }
+      properties: { translateZ: [125, 0], translateY: [150, 0] }
       options: { duration: 15000, easing: 'easeInQuad', sequenceQueue: false }
 
     stars:
