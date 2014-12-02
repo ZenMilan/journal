@@ -7,7 +7,7 @@ document.addEventListener 'DOMContentLoaded', (evt) ->
   sky             = document.querySelector('.sky')
   stars           = document.querySelectorAll('.star')
   bgImgs          = document.querySelectorAll('.bg-img')
-  contactBtn      = document.querySelector('button')
+  contactBtn      = document.querySelector('[data-trigger="tweetMe"]')
   socialContainer = document.querySelector('ul.social')
   socialIcons     = socialContainer.querySelectorAll('li')
   screenWidth     = window.screen.availWidth
@@ -17,12 +17,6 @@ document.addEventListener 'DOMContentLoaded', (evt) ->
 
   r = (min, max) ->
     Math.floor(Math.random() * (max - min + 1)) + min
-
-  launchEmail = (e) ->
-    e.preventDefault()
-    str = "kevin+dingus+pruett+brule+tatanka+bison+gmail"
-    split = str.split('+')
-    window.location.href = "mailto:#{split[2]}.#{split[0]}@#{split[6]}.com?subject=Let's work together"
 
   createImageFrom = (bgImg) ->
     bgImg = window.getComputedStyle(bgImg).backgroundImage
@@ -109,8 +103,6 @@ document.addEventListener 'DOMContentLoaded', (evt) ->
     full: -> [@mtn, @sky, @showAboutTxt, @daylight, @skylight, @fadeOutExtraTxt, @zoomInMtn, @stars, @socialFadeIn, @social, @contactBtn]
 
   createImageFrom bgImg for bgImg in bgImgs
-
-  contactBtn.addEventListener 'click', launchEmail, false
 
   imagesLoaded document.querySelector('.scene'), (instance) ->
 
