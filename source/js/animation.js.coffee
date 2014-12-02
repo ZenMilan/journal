@@ -54,12 +54,12 @@ document.addEventListener 'DOMContentLoaded', (evt) ->
     daylight:
       elements: daylight
       properties: { backgroundColor: ['#000', '#000'], backgroundColorAlpha: [0.66, 0.001] }
-      options: { duration: 1000 }
+      options: { duration: 3500 }
 
     skylight:
       elements: skylight
       properties: { backgroundColor: ['#000', '#000'], backgroundColorAlpha: [0.70, 0.001] }
-      options: { duration: 1000 }
+      options: { duration: 5000, sequenceQueue: false }
 
     fadeOutExtraTxt:
       elements: aboutTxt.querySelectorAll('span.extra')
@@ -104,7 +104,7 @@ document.addEventListener 'DOMContentLoaded', (evt) ->
         translateY: [0, -> r(0, screenHeight * 7.5)]
         translateZ: [0, translateZMin * 7.5]
         rotateZ: ["1080deg", 0]
-      options: { duration: 4000, sequenceQueue: false }
+      options: { duration: 4800, sequenceQueue: false }
 
     full: -> [@mtn, @sky, @showAboutTxt, @daylight, @skylight, @fadeOutExtraTxt, @zoomInMtn, @stars, @socialFadeIn, @social, @contactBtn]
 
