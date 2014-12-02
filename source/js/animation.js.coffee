@@ -34,32 +34,32 @@ document.addEventListener 'DOMContentLoaded', (evt) ->
     mtn:
       elements: mtn
       properties: { opacity: [1, 0], translateZ: [0, 355] }
-      options: { duration: 2800, delay: 1000, easing: 'easeInQuad' }
+      options: { duration: 800, delay: 800, easing: 'easeInQuad' }
 
     sky:
       elements: sky
       properties: { opacity: [1, 0], translateZ: [0, 300] }
-      options: { duration: 3000, easing: 'easeInOutSine', sequenceQueue: false }
+      options: { duration: 500, easing: 'easeInOutSine', sequenceQueue: false }
 
     showAboutTxt:
       elements: aboutTxt
       properties: { translateX: [0, [500, 30], -600] }
-      options: { duration: 1400 }
+      options: { duration: 800 }
 
     contactBtn:
       elements: contactBtn
       properties: { translateX: [0, [500, 30], -500] }
-      options: { duration: 1400 }
+      options: { duration: 1000, sequenceQueue: false }
 
     daylight:
       elements: daylight
       properties: { backgroundColor: ['#000', '#000'], backgroundColorAlpha: [0.66, 0.001] }
-      options: { duration: 4000, delay: 1000 }
+      options: { duration: 1000 }
 
     skylight:
       elements: skylight
       properties: { backgroundColor: ['#000', '#000'], backgroundColorAlpha: [0.70, 0.001] }
-      options: { duration: 7000 }
+      options: { duration: 1000 }
 
     fadeOutExtraTxt:
       elements: aboutTxt.querySelectorAll('span.extra')
@@ -69,7 +69,7 @@ document.addEventListener 'DOMContentLoaded', (evt) ->
     zoomInMtn:
       elements: mtn
       properties: { translateZ: [125, 0], translateY: [150, 0] }
-      options: { duration: 15000, easing: 'easeInQuad', sequenceQueue: false }
+      options: { duration: 6000, easing: 'easeInQuad', sequenceQueue: false }
 
     stars:
       elements: stars
@@ -104,7 +104,7 @@ document.addEventListener 'DOMContentLoaded', (evt) ->
         translateY: [0, -> r(0, screenHeight * 7.5)]
         translateZ: [0, translateZMin * 7.5]
         rotateZ: ["1080deg", 0]
-      options: { duration: 13500, sequenceQueue: false }
+      options: { duration: 4000, sequenceQueue: false }
 
     full: -> [@mtn, @sky, @showAboutTxt, @daylight, @skylight, @fadeOutExtraTxt, @zoomInMtn, @stars, @socialFadeIn, @social, @contactBtn]
 
