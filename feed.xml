@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Blog Name</title>
+  <subtitle>Blog subtitle</subtitle>
+  <id>http://blog.url.com/</id>
+  <link href="http://blog.url.com/"/>
+  <link href="http://blog.url.com/feed.xml" rel="self"/>
+  <updated>2014-10-12T00:00:00-04:00</updated>
+  <author>
+    <name>Blog Author</name>
+  </author>
+  <entry>
+    <title>Another Example</title>
+    <link rel="alternate" href="http://blog.url.com/another-test/"/>
+    <id>http://blog.url.com/another-test/</id>
+    <published>2014-10-12T00:00:00-04:00</published>
+    <updated>2016-02-02T17:38:25-05:00</updated>
+    <author>
+      <name>Article Author</name>
+    </author>
+    <content type="html">&lt;div class='flex'&gt;
+&lt;div class='heading'&gt;
+&lt;h1 class='title'&gt;This is a great title right here&lt;/h1&gt;
+&lt;time datetime='2014-10-12 0:00'&gt;October 12, 2014&lt;/time&gt;
+&lt;/div&gt;
+&lt;p class='lead-in'&gt;This is an example of a lead-in. Does it look ok with the rest of the text?&lt;/p&gt;
+&lt;p&gt;Cras justo odio, dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Maecenas faucibus mollis interdum. Donec id elit non mi porta gravida at eget metus. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.&lt;/p&gt;
+&lt;p&gt;Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Etiam porta sem malesuada magna mollis euismod. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Cras justo odio, dapibus ac facilisis in, egestas eget quam.&lt;/p&gt;
+&lt;/div&gt;
+&lt;figure class='imgAndCaption'&gt;
+&lt;img src='https://unsplash.imgix.net/reserve/z7R1rjT6RhmZdqWbM5hg_R0001139.jpg?q=75&amp;amp;fm=jpg&amp;amp;s=26fc77c65835d1d8e2bcffb8b91a1b93'&gt;
+&lt;figcaption&gt;this is a really great caption&lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;div class='flex plusAside plusAside--left'&gt;
+&lt;aside&gt;this is a simple aside. this will align with&lt;/aside&gt;
+&lt;p&gt;Donec id elit non mi porta gravida at eget metus. Nullam quis risus eget urna mollis ornare vel eu leo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Maecenas faucibus mollis interdum. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Donec id elit non mi porta gravida at eget metus.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class='flex plusAside plusAside--right'&gt;
+&lt;aside&gt;this is a simple aside. this will align with&lt;/aside&gt;
+&lt;p&gt;Donec id elit non mi porta gravida at eget metus. Nullam quis risus eget urna mollis ornare vel eu leo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Maecenas faucibus mollis interdum. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Donec id elit non mi porta gravida at eget metus.&lt;/p&gt;
+&lt;/div&gt;
+&lt;blockquote&gt;this is my sweet blockquote, do you like it?&lt;/blockquote&gt;
+&lt;div class='flex'&gt;
+&lt;p&gt;Cras justo odio, dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Maecenas faucibus mollis interdum. Donec id elit non mi porta gravida at eget metus. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.&lt;/p&gt;
+&lt;p&gt;Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Etiam porta sem malesuada magna mollis euismod. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Cras justo odio, dapibus ac facilisis in, egestas eget quam.&lt;/p&gt;
+&lt;/div&gt;
+&lt;figure class='imgAndCaption'&gt;
+&lt;img src='https://unsplash.imgix.net/reserve/z7R1rjT6RhmZdqWbM5hg_R0001139.jpg?q=75&amp;amp;fm=jpg&amp;amp;s=26fc77c65835d1d8e2bcffb8b91a1b93'&gt;
+&lt;figcaption&gt;this is a really great caption&lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;div class='flex'&gt;
+&lt;p&gt;Maecenas faucibus mollis interdum. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Cras mattis consectetur purus sit amet fermentum.&lt;/p&gt;
+&lt;/div&gt;
+</content>
+  </entry>
+</feed>
